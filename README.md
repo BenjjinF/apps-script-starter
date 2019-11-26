@@ -21,7 +21,7 @@ You also need to install Node.js which includes the npm package manager.
 1\. Clone the repository and install npm dependencies
 
 ```
-git clone https://github.com/labnol/apps-script-starter my-project
+git clone https://github.com/BenjjinF/apps-script-starter.git my-project
 cd my-project
 npm install
 ```
@@ -35,7 +35,7 @@ npx clasp login
 3\. Create a new Google Script bound to a Google Sheet (or set the type as standalone to create a standalone script in your Google Drive)
 
 ```
-npx clasp create --type sheets --title "My Apps Script Project" --rootDir ./dist
+npm run create
 ```
 
 4\. Include the necessary [OAuth Scopes](https://github.com/labnol/apps-script-starter/blob/master/scopes.md) in the [appsscript.json](https://github.com/labnol/apps-script-starter/blob/master/appsscript.json) file

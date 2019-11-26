@@ -11,9 +11,10 @@
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
+    "create": "npx clasp create --rootDir ./dist",
     "build": "webpack",
     "upload": "clasp push",
-    "deploy": "npm run build && npm run upload",
+    "deploy": "npm run build && npm run upload && clasp deploy",
     "deploy:prod": "cross-env NODE_ENV=production npm run deploy"
   },
   "repository": {

@@ -11,6 +11,7 @@
   "license": "MIT",
   "main": "src/index.js",
   "scripts": {
+    "clone": "npx clasp clone --rootDir ./dist",
     "create": "npx clasp create --rootDir ./dist",
     "build": "webpack",
     "upload": "clasp push",

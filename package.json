@@ -14,9 +14,10 @@
     "clone": "npx clasp clone --rootDir ./dist",
     "create": "npx clasp create --rootDir ./dist",
     "build": "webpack",
-    "upload": "clasp push",
-    "deploy": "npm run build && npm run upload && clasp deploy",
-    "deploy:prod": "cross-env NODE_ENV=production npm run deploy"
+    "push": "npm run build && clasp push -f",
+    "deploy": "npm run build && clasp push -f && clasp undeploy -a && clasp deploy",
+    "deploy:prod": "cross-env NODE_ENV=production npm run deploy",
+    "dev": "npm run push && clasp run"
   },
   "repository": {
     "type": "git",
@@ -32,18 +33,21 @@
     "@babel/core": "^7.7.2",
     "@babel/plugin-proposal-class-properties": "^7.7.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/plugin-transform-destructuring": "^7.7.4",
     "@babel/plugin-transform-member-expression-literals": "^7.2.0",
     "@babel/plugin-transform-object-assign": "^7.2.0",
     "@babel/plugin-transform-property-literals": "^7.2.0",
-    "babel-plugin-array-includes": "^2.0.3",
+    "@babel/plugin-transform-property-mutators": "^7.7.4",
     "@babel/preset-env": "^7.7.1",
     "@google/clasp": "^2.3.0",
     "@types/google-apps-script": "^1.0.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-plugin-array-includes": "^2.0.3",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.5",
+    "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
     "eslint-config-airbnb-base": "^14.0.0",
     "eslint-config-prettier": "^6.5.0",
@@ -56,7 +60,6 @@
     "prettier": "^1.19.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "cross-env": "^6.0.3"
+    "webpack-cli": "^3.3.10"
   }
 }

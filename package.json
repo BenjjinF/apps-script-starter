@@ -15,8 +15,7 @@
     "create": "npx clasp create --rootDir ./dist",
     "build": "webpack",
     "push": "npm run build && clasp push -f",
-    "deploy": "npm run build && clasp push -f && clasp undeploy -a && clasp deploy",
-    "deploy:prod": "cross-env NODE_ENV=production npm run deploy",
+    "deploy": "cross-env NODE_ENV=production npm run build && clasp push -f && clasp undeploy -a && clasp deploy",
     "dev": "npm run push && clasp run"
   },
   "repository": {
